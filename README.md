@@ -12,12 +12,12 @@
 
 - has_many  :times
 
-## times テーブル
+## timers テーブル
 
 | Column                | Type        | Options         |
 | ----------            | --------    | --------------  |
 | user                  | references  | null: false,  foreign_key: true      |
-| time                  | string      | null: false     |
+| genre                 | integer     | null: false     |
 | begin_time            | date        | null: false     |
 | end_time              | date        | null: false     |
 
