@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'timers/index'
+  devise_for :users
   root "timers#index"
   resources :timers, only: :index
 end
