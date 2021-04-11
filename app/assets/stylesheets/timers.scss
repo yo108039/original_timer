@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,6 +20,8 @@
 
 .store-btn {
   display: list-item;
+  text-align: center;
+  margin-top: 4vh;
 }
 
 .link-btn {
@@ -38,4 +39,8 @@
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
+}
+
+.field{
+  text-align: center;
 }
