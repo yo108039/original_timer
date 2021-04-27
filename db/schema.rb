@@ -14,9 +14,10 @@ ActiveRecord::Schema.define(version: 2021_04_04_045756) do
 
   create_table "timers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "genre", null: false
-    t.date "begin_time", null: false
-    t.date "end_time", null: false
+    t.integer "genre_id", null: false
+    t.date "memory_date"
+    t.time "end_time", null: false
+    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_timers_on_user_id"
