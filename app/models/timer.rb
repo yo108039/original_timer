@@ -1,2 +1,3 @@
 class Timer < ApplicationRecord
+
 end
