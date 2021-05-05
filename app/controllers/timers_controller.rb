@@ -4,7 +4,7 @@ class TimersController < ApplicationController
   end
 
   def create
-    @timer = Timer.new(timer_params)
+    @timer = Meeting.new(timer_params)
     if @timer.valid?
       @timer.save
       redirect_to :root
@@ -19,5 +19,5 @@ end
 
   def timer_params
     binding.pry
-    params.permit(:genre_id, :memory_date, :end_time, :comment).merge(user_id: current_user.id)
+    params.permit(:genre, :start_time, :calc_time, :comment).merge(user_id: current_user.id)
   end

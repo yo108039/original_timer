@@ -85,7 +85,7 @@
     var mm = minute
     //「秒」を取得する
     var ss = second
-    document.getElementById('end_time').value = hh + ":" + mm + ":" + ss;
+    document.getElementById('calc_time').value = hh + ":" + mm + ":" + ss;
     document.getElementById('memory_date').value = formatDate(new Date());
   }
 
@@ -99,19 +99,23 @@
 
 
   document.getElementById("start").onclick = () => {
+    document.getElementById("start").style.display ="none";
     startTimer();
   }
 
   document.getElementById("stop").onclick = () => {
+    document.getElementById("start").style.display ="inline";
     stopTimer();
   }
 
   document.getElementById("delete").onclick = () => {
+    document.getElementById("start").style.display ="inline";
     deleteTimer();
     stopTimer();
   }
 
   document.getElementById("memory").onclick = () => {
+    document.getElementById("start").style.display ="inline";
     memoryTimer();
     deleteTimer();
     stopTimer();
@@ -126,20 +130,23 @@
   <%= form_with model: @timer, url:timers_path, local: true do |f| %>
 
     ジャンル
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"m_data", id:"item-category"}) %>
+    <%= f.collection_select(:genre, Genre.all, :id, :name, {}, {class:"m_data", id:"item-category"}) %>
 
     記録日
-    <%= f.text_field :memory_date, class:"m_data", id:"memory_date", readonly: true %>
+    <%= f.text_field :start_time, class:"m_data", id:"memory_date", readonly: true %>
 
     記録時間
-    <%= f.text_field :end_time, class:"m_data", id:"end_time", readonly: true %>
+    <%= f.text_field :calc_time, class:"m_data", id:"calc_time", readonly: true %>
 
     メモ
     <%= f.text_area :comment ,class:"m_data",id:"comment", size: "30x2" %>
 
 
-    <%= f.submit "保存する",class:"btn btn-primary"  %>
+    <%= f.submit "保存する",class:"m_data"  %>
+
 
   <% end %>
 
 </div>
+
+<%= render "shared/footer"%>

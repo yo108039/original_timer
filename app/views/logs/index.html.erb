@@ -9,4 +9,22 @@
 
     <%= link_to 'キャンセル', root_path, class:"link-btn" %>
 
-</div>
+</div>  
+
+<%= month_calendar events: @meetings do |date, meetings| %>
+  <%= date.strftime("%Y年 %m月 %d日") %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <% if meeting.genre == 1 %>
+        読書
+      <% elsif meeting.genre == 2 %>
+        勉強
+      <% else %>
+        その他ex
+      <% end %>
+      <%= meeting.calc_time.strftime("%H時 %M分 %S秒") %>
+      <%= meeting.comment %>
+    </div>
+  <% end %>
+<% end %>

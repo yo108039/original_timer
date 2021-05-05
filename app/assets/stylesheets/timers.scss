@@ -2,14 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+header {
+  height: 50px;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  display: flex;
+}
+
+.heading {
+  background-color:blue;
+  width: 50%;
+  margin-left: 30px;
+}
+
+.navbar {
+  background-color:black;
+  width: 50%;
+  padding: 20px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+
+.footer {
+	display: flex;
+  flex-wrap:block;
+}
+
+.img {
+	width: calc(100%)/4;
+	padding:0 5px;
+	box-sizing:border-box;
+}
+
+
 .title-contents {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   color: black;
   align-items: center;
   border-top: 6px double #000;
@@ -65,5 +103,4 @@
   display: flex;
   justify-content:space-between;
   margin: 10px 0px;
-  
 }
