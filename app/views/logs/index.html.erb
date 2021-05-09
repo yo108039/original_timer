@@ -7,14 +7,6 @@
     <%= link_to 'キャンセル', root_path, class:"link-btn" %>
 </div>
 
-データ個数：<%= @meetings.size  %>
-
-<% @meetings.each do |i| %>
-  <% if i.start_time.strftime("%Y%m%d") == Time.now.strftime("%Y%m%d") %> 
-    <%= i.genre %>
-  <% end %>  
-<% end %>
-
 <%= month_calendar events: @meetings do |date, meetings| %>
   <%= date.strftime("%Y年 %m月 %d日") %>
 

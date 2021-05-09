@@ -62,6 +62,24 @@
   background-color: lightblue;
 }
 
+.footer-contents {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  border-top: 6px double #000;
+  border-bottom: 6px double #000;
+  font-size: 15px;
+  background-color: lightblue;
+}
+
+.footer-link{
+  justify-content: space-between;
+}
+
+
 .main {
   display: list-item;
   text-align: center;
@@ -91,12 +109,27 @@
   text-align: center;
 }
 
+.timer-title{
+  margin: 10px;
+  font-size: 20px;
+}
+
 .timer{
   display: flex;
   justify-content: center;
-  margin:0 auto;
 }
 
+.counter{
+  border:solid;
+  font-family: arial black ;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+
+.btn-primary{
+  padding:10px 10px;
+}
 .memory_timer{
   display: flex;
   flex-flow: column;

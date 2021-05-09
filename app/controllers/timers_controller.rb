@@ -5,9 +5,7 @@ class TimersController < ApplicationController
 
   def create
     @timer = Meeting.new(timer_params)
-    binding.pry
     if @timer.valid?
-      binding.pry
       @timer.save
       redirect_to :root
     else

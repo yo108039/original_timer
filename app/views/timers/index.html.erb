@@ -6,17 +6,17 @@
 
   <div class='store-btn'>
   
-      <button type="submit",class="btn btn-primary", id="start">タイマー開始</button>
-      <button type="submit",class="btn btn-primary", id="stop">停止 </button>
-      <button type="submit",class="btn btn-primary", id="delete">削除 </button>
-      <button type="submit",class="btn btn-primary", id="memory">記録 </button>
+      <button type="submit",class="btn-primary", id="start">タイマー開始</button>
+      <button type="submit",class="btn-primary", id="stop">停止 </button>
+      <button type="submit",class="btn-primary", id="delete">削除 </button>
+      <button type="submit",class="btn-primary", id="memory">記録 </button>
 
-      <p>経過時間<p>
+      <p class='timer-title'>経過時間<p>
 
       <div class='timer'>
-        <div id="hour"></div>
-        <div id="minute"></div>
-        <div id="second"></div>
+        <div id="hour", class='counter'>0時間</div>
+        <div id="minute", class='counter'>0分</div>
+        <div id="second", class='counter'>0秒</div>
       </div>
     
   </div>
@@ -110,6 +110,8 @@
 
   document.getElementById("delete").onclick = () => {
     document.getElementById("start").style.display ="inline";
+    document.getElementById("memory_date").value = "";
+    document.getElementById("calc_time").value = "";
     deleteTimer();
     stopTimer();
   }
