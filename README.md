@@ -1,8 +1,8 @@
 # アプリ名	
-　時間管理アプリ
+　生活時間計測タイマー
 
 # 概要
-　読書や勉強時間を実際に測定し、保存することができます。  　
+　読書や勉強時間を実際に測定し、保存することができます。 
 　実際の行動時間をカレンダー形式で表示し、一覧として確認することができます
 　
 # 制作背景
@@ -13,10 +13,9 @@
 
 # 実装予定の内容
 　ユーザ管理 ※ユーザ登録、ログイン、ログアウト  
-　時間測定  
+　時間測定 
+  時間保存機能
 　ログ表示機能  
-　(日次、週次、月次時間表示機能)  
-　(グラフ表示機能)  
  
 # gem
 　・devise  
@@ -37,16 +36,16 @@
 
 ### Association
 
-- has_many  :times
+- has_many  :meetings
 
-## timers テーブル
+## meetings テーブル
 
 | Column                | Type        | Options         |
 | ----------            | --------    | --------------  |
-| user                  | references  | null: false,  foreign_key: true      |
 | genre                 | integer     | null: false     |
-| begin_time            | date        | null: false     |
-| end_time              | date        | null: false     |
+| start_time            | genre       | null: false     |
+| calc_time             | time        | null: false     |
+| comment               | text        | null: false     |
 
 ### Association
 
