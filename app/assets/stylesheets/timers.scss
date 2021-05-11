@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .heading {
   background-color:blue;
   display: inline-block;
@@ -117,6 +118,7 @@
 .timer{
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .counter{
@@ -142,4 +144,5 @@
   display: flex;
   justify-content:space-between;
   margin: 10px 0px;
+  resize: none;
 }

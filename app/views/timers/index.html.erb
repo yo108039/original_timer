@@ -23,6 +23,32 @@
 
 </div>
 
+<div class='memory_timer'>
+
+  <%= form_with model: @timer, url:timers_path, local: true do |f| %>
+
+    ジャンル
+    <%= f.collection_select(:genre, Genre.all, :id, :name, {}, {class:"m_data", id:"item-category"}) %>
+
+    記録日
+    <%= f.text_field :start_time, class:"m_data", id:"memory_date", readonly: true %>
+
+    記録時間
+    <%= f.text_field :calc_time, class:"m_data", id:"calc_time", readonly: true %>
+
+    メモ
+    <%= f.text_area :comment ,class:"m_data",id:"comment", size: "30x2" %>
+
+
+    <%= f.submit "保存する",class:"m_data"  %>
+
+
+  <% end %>
+
+  <%= link_to 'ログ', logs_path , class:"link-btn"%>
+
+</div>
+
 <script>
 
   var testTimer;
@@ -126,30 +152,5 @@
 
 </script>
 
-<div class='memory_timer'>
-
-  <%= form_with model: @timer, url:timers_path, local: true do |f| %>
-
-    ジャンル
-    <%= f.collection_select(:genre, Genre.all, :id, :name, {}, {class:"m_data", id:"item-category"}) %>
-
-    記録日
-    <%= f.text_field :start_time, class:"m_data", id:"memory_date", readonly: true %>
-
-    記録時間
-    <%= f.text_field :calc_time, class:"m_data", id:"calc_time", readonly: true %>
-
-    メモ
-    <%= f.text_area :comment ,class:"m_data",id:"comment", size: "30x2" %>
-
-
-    <%= f.submit "保存する",class:"m_data"  %>
-
-
-  <% end %>
-
-  <%= link_to 'ログ', logs_path , class:"link-btn"%>
-
-</div>
 
 <%= render "shared/footer"%>
