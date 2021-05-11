@@ -1,0 +1,41 @@
+
+<div>
+  <%= render "shared/header"%>
+</div>
+
+<div class='main'>
+
+<p>
+  <strong>ユーザID</strong>
+  <%= @meeting.user_id %>
+</p>
+
+<p>
+  <strong>ジャンル:</strong>
+    <% if @meeting.genre == 1 %>
+      読書
+    <% elsif @meeting.genre == 2 %>
+      勉強
+    <% else %>
+      その他
+    <% end %>
+</p>
+
+<p>
+  <strong>計測日：</strong>
+  <%= @meeting.start_time.strftime("%Y年 %m月 %d日") %>
+</p>
+
+<p>
+  <strong>計測時間：</strong>
+  <%= @meeting.calc_time.strftime("%H時 %M分 %S秒") %>
+</p>
+
+<p>
+  <strong>コメント:</strong>
+  <%= @meeting.comment %>
+</p>
+
+<%= link_to '戻る', logs_path,class:"link-btn" %> 
+
+</div>

@@ -7,3 +7,27 @@
 <!-- BootstrapのJS読み込み -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
+
+<header>
+</header>
+
+<div class='heading'>
+  <h1 class="title">Mine Manage(M2) Timer</h1>
+    <div class='navbar'>
+      <% if user_signed_in? %>
+        <%= link_to 'ログアウト', destroy_user_session_path, class: "nav-list", method: :delete %>
+      <% else %>
+        <%= link_to 'ログイン', new_user_session_path, class: "nav-list"%>
+      <% end %>
+      <%= link_to '新規登録', new_user_registration_path, class: "nav-list"%>
+    </div>
+
+    <div class='login'>
+        <% if user_signed_in? %>
+         <p>ログイン中</p>
+         <p><%= current_user.nickname %></p>
+        <% end %>
+    </div>
+
+</div>
+

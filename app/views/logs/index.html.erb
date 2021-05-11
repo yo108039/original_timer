@@ -1,12 +1,30 @@
 
-<div class='title-contents'>
-  ログ表示
+<div>
+  <%= render "shared/header"%>
 </div>
 
 <div class='store-btn'>
-
-    <%= link_to 'ログ表示', '#' , class:"link-btn"%>
-
     <%= link_to 'キャンセル', root_path, class:"link-btn" %>
+</div>
 
+<%= month_calendar events: @meetings do |date, meetings| %>
+  <%= date.strftime("%Y年 %m月 %d日") %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <% if meeting.genre == 1 %>
+        読書
+      <% elsif meeting.genre == 2 %>
+        勉強
+      <% else %>
+        その他
+      <% end %>
+      <%= meeting.calc_time.strftime("%H時 %M分 %S秒") %>
+      <%= link_to meeting.comment ,meeting_path(meeting.id), method: :get %>
+    </div>
+  <% end %>
+<% end %>
+
+<div>
+  <%= render "shared/footer"%>
 </div>
