@@ -4,7 +4,7 @@
 </div>
 
 <div class='store-btn'>
-    <%= link_to 'キャンセル', root_path, class:"link-btn" %>
+    <%= link_to '戻る', root_path, class:"link-btn" %>
 </div>
 
 <%= month_calendar events: @meetings do |date, meetings| %>
@@ -13,14 +13,16 @@
   <% meetings.each do |meeting| %>
     <div>
       <% if meeting.genre == 1 %>
-        読書
+        <%= link_to "読書" ,meeting_path(meeting.id), method: :get %>
       <% elsif meeting.genre == 2 %>
-        勉強
+        <%= link_to "勉強" ,meeting_path(meeting.id), method: :get %>
       <% else %>
-        その他
+        <%= link_to "その他" ,meeting_path(meeting.id), method: :get %>
       <% end %>
+
       <%= meeting.calc_time.strftime("%H時 %M分 %S秒") %>
-      <%= link_to meeting.comment ,meeting_path(meeting.id), method: :get %>
+      <%= meeting.comment %>
+      
     </div>
   <% end %>
 <% end %>
