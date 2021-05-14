@@ -1,5 +1,5 @@
 # アプリ名	
-　Mine Manage(M2) Timer  
+　My Manage(M2) Timer  
 
 # 概要
 　読書や勉強時間を実際に測定し、保存することが可能  
