@@ -16,10 +16,10 @@
     <div class='navbar'>
       <% if user_signed_in? %>
         <%= link_to 'ログアウト', destroy_user_session_path, class: "nav-list", method: :delete %>
+        <%= link_to '新規登録', new_user_registration_path, class: "nav-list"%>
       <% else %>
         <%= link_to 'ログイン', new_user_session_path, class: "nav-list"%>
       <% end %>
-      <%= link_to '新規登録', new_user_registration_path, class: "nav-list"%>
     </div>
 
     <div class='login'>
