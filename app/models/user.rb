@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :meetings
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, uniqueness: true
+  validates :email, uniqueness: true
+
 end
