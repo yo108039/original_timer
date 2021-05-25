@@ -21,6 +21,9 @@
 　ニックネーム：test  
 　パスワード：123456  
 
+# デプロイ先URL
+https://originaltimer.herokuapp.com/
+
 # 画像
 　時間測定機能  
 　https://gyazo.com/d90e9134e86999c91024b0aa3e22c036
