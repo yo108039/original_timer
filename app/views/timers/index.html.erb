@@ -67,7 +67,7 @@
       document.getElementById('hour').innerHTML = hour + '時間';      
 
 
-      if (second == 4) {
+      if (second == 60) {
 
         minute = minute + 1;
         document.getElementById('second').innerHTML = 0 + '秒';
@@ -76,7 +76,7 @@
 
       }
 
-      if (minute == 4) {
+      if (minute == 60) {
  
         hour = hour + 1;
         document.getElementById('second').innerHTML = 0 + '秒';      
